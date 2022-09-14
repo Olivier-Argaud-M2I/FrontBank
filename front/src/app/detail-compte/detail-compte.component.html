@@ -1,0 +1,57 @@
+<p>detail-compte works!</p>
+
+<h1>{{compte.name}}</h1>
+<h2>Solde du compte : {{compte.solde}}</h2>
+
+
+
+
+<fieldset>
+  <legend >Création d'une nouvelle  transaction</legend>
+  <form (ngSubmit)="create()" [formGroup]="transactionForm">
+
+    <div>
+      <input type="hidden"  formControlName="id" >
+    </div>
+
+    <div>
+      <input type="text"  placeholder="Title" formControlName="title">
+    </div>
+
+    <div>
+      <input type="number"  placeholder="Montant" formControlName="montant">
+    </div>
+
+    <div>
+      <input type="checkbox"  formControlName="reccuring">
+    </div>
+
+    <div>
+      <input type="hidden"  formControlName="compte" >
+    </div>
+
+    <div >
+      <input type="submit" value="Valider">
+    </div>
+
+  </form>
+</fieldset>
+
+
+
+
+
+
+
+
+
+<h2>Liste des transactions</h2>
+<div *ngFor="let transaction of transactions">
+  <div>Title : {{transaction.title}}</div>
+  <div>Montant : {{transaction.montant}}</div>
+  <button (click)="delete(transaction)"> Supprimer </button>
+  <button (click)="edit(transaction)"> Editer </button>
+</div>
+
+
+

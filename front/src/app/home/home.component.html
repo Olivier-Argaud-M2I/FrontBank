@@ -1,0 +1,10 @@
+<p>home works!</p>
+
+
+<div *ngFor="let compte of comptes">
+
+  <div (click)="goto(compte.id)">
+    Nom : {{compte.name}}
+  </div>
+
+</div>
