@@ -1,38 +1,30 @@
-<p>detail-compte works!</p>
 
-<h1>{{compte.name}}</h1>
-<h2>Solde du compte : {{compte.solde}}</h2>
+<div class="p-6 max-w-lg mx-auto m-8 bg-white rounded-xl shadow-lg text-center text-2xl">
+  <h1 >{{compte.name}}</h1>
+  <h2>Solde du compte : {{compte.solde}}</h2>
+</div>
 
 
 
 
-<fieldset>
+
+<fieldset class="p-6 max-w-lg mx-auto m-8 bg-white rounded-xl shadow-lg text-center text-2xl">
   <legend >Création d'une nouvelle  transaction</legend>
-  <form (ngSubmit)="create()" [formGroup]="transactionForm">
+  <form (ngSubmit)="create()" [formGroup]="transactionForm" class="flex">
 
-    <div>
+
       <input type="hidden"  formControlName="id" >
-    </div>
 
-    <div>
-      <input type="text"  placeholder="Title" formControlName="title">
-    </div>
+      <input type="text"  placeholder="Title" formControlName="title" class="m-2">
 
-    <div>
-      <input type="number"  placeholder="Montant" formControlName="montant">
-    </div>
+      <input type="number"  placeholder="Montant" formControlName="montant" class="m-2">
 
-    <div>
-      <input type="checkbox"  formControlName="reccuring">
-    </div>
+      <input type="checkbox"  formControlName="reccuring" class="m-6">
 
-    <div>
       <input type="hidden"  formControlName="compte" >
-    </div>
 
-    <div >
-      <input type="submit" value="Valider">
-    </div>
+      <input type="submit" value="Valider" class="p-2 m-2 shadow-sm rounded-xl hover:bg-green-600">
+
 
   </form>
 </fieldset>
@@ -45,12 +37,12 @@
 
 
 
-<h2>Liste des transactions</h2>
-<div *ngFor="let transaction of transactions">
+<h2 class="p-6 max-w-lg mx-auto m-8 bg-white rounded-xl shadow-lg text-center text-2xl">Liste des transactions</h2>
+<div *ngFor="let transaction of transactions" class="p-6 max-w-lg mx-auto m-4 bg-white rounded-xl shadow-lg text-center text-2xl">
   <div>Title : {{transaction.title}}</div>
   <div>Montant : {{transaction.montant}}</div>
-  <button (click)="delete(transaction)"> Supprimer </button>
-  <button (click)="edit(transaction)"> Editer </button>
+  <button (click)="delete(transaction)" class="p-2 m-2 shadow-sm rounded-xl hover:bg-red-600"> Supprimer </button>
+  <button (click)="edit(transaction)" class="p-2 m-2 shadow-sm rounded-xl hover:bg-green-600"> Editer </button>
 </div>
 
 

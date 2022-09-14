@@ -1,10 +1,11 @@
-<p>home works!</p>
 
 
-<div *ngFor="let compte of comptes">
+  <h1 class="p-6 max-w-lg mx-auto m-8 bg-white rounded-xl shadow-lg text-center text-2xl">Liste des comptes</h1>
 
-  <div (click)="goto(compte.id)">
-    Nom : {{compte.name}}
-  </div>
 
-</div>
+  <p *ngFor="let compte of comptes" (click)="goto(compte.id)" class="p-6 max-w-sm mx-auto m-8 bg-white rounded-xl shadow-lg text-center hover:bg-violet-600">
+     {{compte.name}}
+  </p>
+
+
+
